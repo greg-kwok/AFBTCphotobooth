@@ -62,8 +62,9 @@ function capturePhoto() {
     // Apply the selected filter to the canvas context before drawing the photo
     ctx.filter = currentFilter;
     ctx.save();
-    ctx.translate(canvas.width, 0); // Flip image horizontally
-    ctx.scale(1, 1);
+    //ctx.translate(canvas.width, 0); // Flip image horizontally
+    //ctx.scale(-1, 1);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
     ctx.restore();
     
@@ -87,6 +88,7 @@ function capturePhoto() {
 
 function startCapture() {
     document.getElementById('capture').style.display = 'none';
+    //document.getElementById('logo').style.display = 'none';
     photos = [];
     photoStrip.innerHTML = '';
     for (let i = 0; i < 4; i++) {
