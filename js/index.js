@@ -62,7 +62,7 @@ function capturePhoto() {
     // Apply the selected filter to the canvas context before drawing the photo
     ctx.filter = currentFilter;
     ctx.save();
-    ctx.translate(canvas.width, 0); // Flip image horizontally
+    //ctx.translate(canvas.width, 0); // Flip image horizontally
     ctx.scale(-1, 1);
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
     ctx.restore();
